@@ -16,7 +16,6 @@ Live preview: https://sites.super.myninja.ai/60a4d474-e047-4435-bc2f-24186be8129
 - **Three wish cards** and **three floating "notes" orbs**, each revealing a note.
 - **Cake with candles** — tap/blow to snuff the candles and reveal a wish.
 - **Scratch-off secret** — swipe to uncover a hidden message.
-- **Voice note** — a short "Happy Birthday" melody you can play.
 - **Background music** toggle (generated with the Web Audio API).
 - **Confetti & floating lanterns**, scroll-reveal animations, and a keepsake list.
 - **Share** button (Web Share API / WhatsApp) and **install-to-home-screen** prompt.
@@ -90,7 +89,6 @@ site/
 ├─ script.js             ← countdown, modals, candles, scratch, music, PWA (edit CONFIG here)
 ├─ sw.js                 ← offline service worker
 ├─ manifest.webmanifest  ← app name / icons / theme
-├─ voice-note.mp3        ← the birthday melody
 ├─ photos/
 │   ├─ mom-1.jpg         ← ⭐ hero slideshow photo 1
 │   ├─ mom-2.jpg         ← ⭐ hero slideshow photo 2 (auto-rotates with photo 1)

@@ -285,59 +285,6 @@
     size();
   })();
 
-  /* ---------------- VOICE NOTE PLAYER ---------------- */
-  (function () {
-    var audio = $('voiceAudio'), play = $('voicePlay'), wave = $('voiceWave');
-    var cur = $('voiceCur'), dur = $('voiceDur');
-    if (!audio || !play || !wave) return;
-    var BARS = 42, bars = [];
-
-    for (var b = 0; b < BARS; b++) {
-      var bar = document.createElement('span');
-      var h = 22 + Math.abs(Math.sin(b * 0.7) * 60) + (b % 5) * 3;
-      bar.style.height = Math.min(h, 100) + '%';
-      wave.appendChild(bar);
-      bars.push(bar);
-    }
-    function fmt(t) {
-      if (!isFinite(t)) return '0:00';
-      var m = Math.floor(t / 60), s = Math.floor(t % 60);
-      return m + ':' + (s < 10 ? '0' : '') + s;
-    }
-    function paint() {
-      var d = audio.duration || 0, p = d ? audio.currentTime / d : 0;
-      var upto = Math.round(p * BARS);
-      for (var i = 0; i < BARS; i++) bars[i].classList.toggle('on', i < upto);
-      cur.textContent = fmt(audio.currentTime);
-    }
-    on(audio, 'loadedmetadata', function () { dur.textContent = fmt(audio.duration); });
-    on(audio, 'timeupdate', paint);
-    on(audio, 'ended', function () {
-      play.classList.remove('playing');
-      play.setAttribute('aria-pressed', 'false');
-      play.setAttribute('aria-label', 'Play the voice note for Mom');
-      paint();
-    });
-    on(play, 'click', function () {
-      if (audio.paused) {
-        audio.play().catch(function () {});
-        play.classList.add('playing');
-        play.setAttribute('aria-pressed', 'true');
-        play.setAttribute('aria-label', 'Pause the voice note for Mom');
-      } else {
-        audio.pause();
-        play.classList.remove('playing');
-        play.setAttribute('aria-pressed', 'false');
-        play.setAttribute('aria-label', 'Play the voice note for Mom');
-      }
-    });
-    on(wave, 'click', function (e) {
-      var r = wave.getBoundingClientRect();
-      var ratio = Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1);
-      if (audio.duration) { audio.currentTime = ratio * audio.duration; paint(); }
-    });
-  })();
-
   /* ---------------- BACKGROUND MUSIC (Web Audio) ---------------- */
   (function () {
     var btn = $('musicBtn'), label = $('musicLabel');
@@ -501,7 +448,6 @@
     var base = 'https://wa.me/' + CONFIG.whatsapp;
     var msg = base + '?text=' + encodeURIComponent(CONFIG.waIntro);
     if ($('waBtn')) $('waBtn').href = msg;
-    if ($('waVoice')) $('waVoice').href = base;
   })();
 
   /* ---------------- HOW MODAL ---------------- */

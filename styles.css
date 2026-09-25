@@ -256,27 +256,6 @@ body.is-birthday .count-num{color:var(--wine)}
 .msg-body{color:var(--muted);font-family:var(--display);font-style:italic;margin:0}
 .msg-card--pending{border-style:dashed;background:linear-gradient(160deg,#fffdfb,#fdf3f6)}
 
-/* ---------- voice / player ---------- */
-.voice{text-align:center}
-.player{
-  display:flex;align-items:center;gap:1.1rem;max-width:640px;margin:1.6rem auto;
-  background:#fff;border-radius:var(--radius);padding:1.2rem 1.4rem;box-shadow:var(--shadow-sm);border:1px solid var(--line);
-  text-align:left;
-}
-.play-btn{
-  flex:none;width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--burgundy),var(--wine));
-  display:grid;place-items:center;box-shadow:var(--shadow-sm);transition:transform .2s;
-}
-.play-btn:hover{transform:scale(1.06)}
-.play-icon{width:0;height:0;border-left:16px solid #fff;border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
-.play-btn.playing .play-icon{border:0;width:14px;height:16px;background:#fff;margin-left:0;clip-path:polygon(0 0,38% 0,38% 100%,0 100%,0 0,62% 0,100% 0,100% 100%,62% 100%,62% 0)}
-.player-main{flex:1;min-width:0}
-.player-title{font-weight:600;color:var(--burgundy);margin:0 0 .5rem;font-size:.95rem}
-.wave{display:flex;align-items:flex-end;gap:3px;height:44px;cursor:pointer}
-.wave span{flex:1;background:var(--blush);border-radius:3px;transition:background .2s;min-height:6px}
-.wave span.on{background:linear-gradient(180deg,var(--rose),var(--wine))}
-.player-times{display:flex;justify-content:space-between;font-size:.72rem;color:var(--muted);margin-top:.35rem}
-
 /* ---------- candles / cake ---------- */
 .candles{text-align:center}
 .cake{position:relative;width:min(340px,80vw);margin:2.2rem auto 1rem;padding-top:70px}
