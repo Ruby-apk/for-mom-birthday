@@ -4,7 +4,6 @@ A warm, colorful, single-page birthday website for your friend's Mom, celebratin
 **27 September 2026**. It works offline, can be installed to a phone home screen,
 and is packed with little interactive surprises.
 
-Live preview: https://sites.super.myninja.ai/60a4d474-e047-4435-bc2f-24186be8129c/38770d5e/index.html
 
 ---
 
