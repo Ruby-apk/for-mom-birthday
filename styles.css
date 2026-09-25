@@ -147,6 +147,20 @@ p{margin:0 0 1rem}
   box-shadow:var(--shadow);transform:rotate(1.6deg);
 }
 .hero-photo img{border-radius:12px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.hero-slides{position:relative;width:100%;aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--blush)}
+.hero-slides .slide{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:12px;
+  opacity:0;transition:opacity 1.4s ease;will-change:opacity;
+}
+.hero-slides .slide.is-active{opacity:1}
+.hero-dots{
+  position:absolute;bottom:3.1rem;left:0;right:0;display:flex;justify-content:center;gap:.5rem;z-index:3;
+}
+.hero-dots .dot{
+  width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.65);
+  box-shadow:0 0 0 1px rgba(122,32,68,.25);transition:background .3s,transform .3s;
+}
+.hero-dots .dot.is-active{background:var(--gold);transform:scale(1.3)}
 .hero-photo figcaption{
   position:absolute;bottom:.7rem;left:0;right:0;text-align:center;font-family:var(--display);font-style:italic;color:var(--muted);font-size:.9rem;
 }
@@ -333,9 +347,6 @@ body.is-birthday .count-num{color:var(--wine)}
 .modal-close:hover{background:rgba(122,32,68,.16)}
 .letter-card h3{font-size:1.9rem;color:var(--burgundy);margin:.3rem 0 1rem}
 .letter-body p{color:#5b4451}
-.letter-figure{margin:1.2rem 0;text-align:center}
-.letter-figure img{border-radius:14px;aspect-ratio:16/10;object-fit:cover}
-.letter-figure figcaption{font-family:var(--display);font-style:italic;color:var(--muted);font-size:.85rem;margin-top:.5rem}
 .letter-sig{font-family:var(--display);font-style:italic;color:var(--wine);font-size:1.15rem}
 .note-card{text-align:center}
 .note-emoji{font-size:2.4rem;display:block;margin-bottom:.4rem}

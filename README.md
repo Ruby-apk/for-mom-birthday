@@ -30,7 +30,6 @@ The site uses these images — replace any of them (keep the **same filenames**)
 |------|----------|-------------------|
 | `photos/mom-1.jpg` | Hero portrait — **first** photo in the auto-rotating slideshow | Portrait (e.g. 1000 × 1500 px) |
 | `photos/mom-2.jpg` | Hero portrait — **second** photo in the slideshow (rotates with the first) | Portrait (e.g. 1000 × 1500 px) |
-| `photos/letter.jpg` | The photo inside the letter for Mom | Portrait / square |
 | `photos/flowers.jpg` | The floral still-life in the "Words from the heart" (children's messages) section | Portrait (e.g. 1000 × 1500 px) |
 
 Steps:
@@ -91,7 +90,6 @@ site/
 ├─ photos/
 │   ├─ mom-1.jpg         ← ⭐ hero slideshow photo 1
 │   ├─ mom-2.jpg         ← ⭐ hero slideshow photo 2 (auto-rotates with photo 1)
-│   ├─ letter.jpg        ← ⭐ photo inside the letter
 │   └─ flowers.jpg       ← floral still-life (Save-the-date section)
 └─ icons/                ← app icons (favicon, home-screen)
 ```

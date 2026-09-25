@@ -255,7 +255,7 @@
       ctx.globalCompositeOperation = 'destination-out';
       ctx.fillStyle = 'rgba(0,0,0,1)'; // fully opaque brush → erases the cover in one pass
       ctx.beginPath();
-      ctx.arc(x, y, 52 * dpr, 0, Math.PI * 2);
+      ctx.arc(x, y, 26 * dpr, 0, Math.PI * 2);
       ctx.fill();
     }
     function checkReveal() {
@@ -263,7 +263,7 @@
       var data = ctx.getImageData(0, 0, cv.width, cv.height).data;
       var clear = 0, total = 0;
       for (var i = 3; i < data.length; i += 4 * 12) { total++; if (data[i] < 40) clear++; }
-      if (total && clear / total > 0.22) {
+      if (total && clear / total > 0.55) {
         revealed = true;
         ctx.clearRect(0, 0, cv.width, cv.height);
         wrap.classList.add('revealed');
@@ -279,8 +279,6 @@
     on(cv, 'touchstart', start, { passive: false });
     on(cv, 'touchmove', move, { passive: false });
     on(cv, 'touchend', end);
-    // quick reveal: a simple tap / click on the panel uncovers it instantly
-    on(cv, 'click', function () { if (!revealed) { revealed = true; ctx.clearRect(0, 0, cv.width, cv.height); wrap.classList.add('revealed'); if (window.__burstConfetti) window.__burstConfetti(80); } });
     on(window, 'resize', function () { if (!revealed) size(); });
     size();
   })();
